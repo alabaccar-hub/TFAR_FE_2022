@@ -1,0 +1,135 @@
+<section class="signup-form">
+    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+  
+      <div class="row">
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Your role user</mat-label>
+            <mat-select [(ngModel)]="user.role" ngModel name="roleUser" required>
+              <mat-option value="Admin">Administrateur</mat-option>
+              <mat-option value="Referent">Référent</mat-option>
+              <mat-option value="Participant">Participant</mat-option>
+              <mat-option value="Invite">Invité</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Your type user</mat-label>
+            <mat-select [(ngModel)]="user.type" ngModel name="typeUser" required>
+              <mat-option value="Medecin">Médecin</mat-option>
+              <mat-option value="Cytogeneticien">Cytogeneticien</mat-option>
+              <mat-option value="Scientifique">Scientifique</mat-option>
+              <mat-option value="Invite">Invité</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your nom user" ngModel name="Nom_user" required
+              [(ngModel)]="user.nom" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">name must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your prenom user" ngModel name="Prenom_user" required
+              [(ngModel)]="user.prenom" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">Surname must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your grade user" ngModel name="Grade_user" required
+              [(ngModel)]="user.grade" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">Grade must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Gouvernorat</mat-label>
+            <mat-select [(ngModel)]="user.gouvernorat" ngModel name="gouvernoratUser" required>
+              <mat-option *ngFor="let item of gouvernorat " value="{{item}}">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your adress user" ngModel name="Adresse_User" required
+              [(ngModel)]="user.adresse" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">adress must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your tel user" ngModel name="Tel_User" required
+              [(ngModel)]="user.tel" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">tel must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your email user" ngModel name="Email_User" required
+              [(ngModel)]="user.email" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">email must not be empty.</mat-error>
+          </mat-form-field>
+        </div>
+  
+        <div class="column">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your photo user" ngModel name="Photo_user" required
+              [(ngModel)]="user.photo" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">photo must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your poste user" ngModel name="Poste_user" required
+              [(ngModel)]="user.poste" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">poste must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your fax user" ngModel name="fax_user" required
+              [(ngModel)]="user.fax" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">fax must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your login user" ngModel name="login_user" required
+              [(ngModel)]="user.login" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">login must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your password user" ngModel name="password_user" required
+              [(ngModel)]="user.password" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">password must not be empty.</mat-error>
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input type="text" matInput placeholder="Your url user" ngModel name="url_user" required
+              [(ngModel)]="user.url" #nomHInput="ngModel">
+            <mat-error *ngIf="nomHInput.hasError('required')">url must not be empty.</mat-error>
+          </mat-form-field>
+  
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Organisme</mat-label>
+            <mat-select [(value)]="user.codeOrganisme" name="codeOrganismeUser" required>
+              <mat-option *ngFor="let item of organismes$ | async " [value]="item.code">{{item.nom}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Departement</mat-label>
+            <mat-select [(value)]="user.codeDepartement" name="codeDepartementUser" required>
+              <mat-option *ngFor="let item of departements$ | async" [value]="item.code"> {{ item.nom }} </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+        </div>
+      </div>
+  
+      <div class="button-row">
+        <button mat-raised-button color="primary" [disabled]="f.invalid" [mat-dialog-close]="user"
+          (click)="todo(user)">Submit</button>
+        <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+  
+      </div>
+  
+    </form>
+  </section>
+  
+  

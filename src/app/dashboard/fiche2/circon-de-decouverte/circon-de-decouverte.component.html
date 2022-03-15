@@ -1,0 +1,117 @@
+<div id="wrapper">
+
+
+    <div id="c1">
+  
+      <span class="label">Syndrome anemyque</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Syndrome anemyque </mat-label>
+        <mat-select [(ngModel)]="fiche2.syndromeAnemique" ngModel name="sa" required>
+          <mat-option *ngFor="let item of tabenum1" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br>
+  
+      <span class="label">Enquette familliale</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Enquette familliale </mat-label>
+        <mat-select [(ngModel)]="fiche2.enqueteFam" ngModel name="ef" required>
+          <mat-option *ngFor="let item of tabenum1" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br><br>
+      <span class="label">Type Cancer</span>
+      <mat-form-field >
+        <input
+          type="text"
+          matInput
+          placeholder="Type Cancer"
+          ngModel
+          name="Type_Cancer"
+          required
+          [(ngModel)]="fiche2.typeCancer"
+          #nomHInput="ngModel">
+          <mat-error *ngIf="nomHInput.hasError('required')">type must not be empty.</mat-error>
+      </mat-form-field>
+  
+  
+  
+  
+  
+    </div>
+  
+  
+    <div id="c2">
+  
+      <span class="label">Syndrome hémorragique</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Syndrome hémorragique </mat-label>
+        <mat-select [(ngModel)]="fiche2.syndromeHem" ngModel name="sh" required>
+          <mat-option *ngFor="let item of tabenum1" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br>
+  
+      <span class="label">Découverte fortuite</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Découverte fortuite</mat-label>
+        <mat-select [(ngModel)]="fiche2.decouverteFort" ngModel name="df" required>
+          <mat-option *ngFor="let item of tabenum1" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br><br>
+      <span class="label">Autres</span>
+      <mat-form-field >
+        <input
+          type="text"
+          matInput
+          placeholder="Autres"
+          ngModel
+          name="Autres"
+          required
+          [(ngModel)]="fiche2.autreCirDec"
+          #nomHInput="ngModel">
+          <mat-error *ngIf="nomHInput.hasError('required')">autres must not be empty.</mat-error>
+      </mat-form-field>
+  
+  
+  
+    </div>
+  
+  
+  
+    <div id="c3">
+  
+      <span class="label">Syndrome infectieux</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Syndrome infectieux</mat-label>
+        <mat-select [(ngModel)]="fiche2.syndromeInf" ngModel name="si" required>
+          <mat-option *ngFor="let item of tabenum1" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br>
+  
+      <span class="label">Cancer</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Cancer</mat-label>
+        <mat-select [(ngModel)]="fiche2.cancer" ngModel name="cancer" required>
+          <mat-option *ngFor="let item of tabenum1" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br>
+  
+  
+  
+  
+    </div>
+  
+  
+  </div>
+  
+  

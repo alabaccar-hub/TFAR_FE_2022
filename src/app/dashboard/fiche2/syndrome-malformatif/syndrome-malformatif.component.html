@@ -1,0 +1,940 @@
+
+<hr>
+<p><strong> A la naissance</strong> </p>
+
+<div id="wrapper">
+
+
+  <div id="c1">
+
+    <span class="label">Taille :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Taille </mat-label>
+      <mat-select [(ngModel)]="fiche3.tailleNaiss" ngModel name="taille" required>
+        <mat-option *ngFor="let item of tab " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">Cm</span>
+
+
+  </div>
+
+
+  <div id="c2">
+
+    <span class="label">Poids :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Poids </mat-label>
+      <mat-select [(ngModel)]="fiche3.poidsNaiss" ngModel name="poids" required>
+        <mat-option *ngFor="let item of tab2 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">Kg</span>
+
+
+  </div>
+
+
+  <div id="c3">
+
+    <span class="label">Hypotrophie :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Hypotrophie </mat-label>
+      <mat-select [(ngModel)]="fiche3.hypotrophie" ngModel name="hypotrophie" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+  </div>
+
+
+</div>
+
+<br>
+<hr>
+<span class="label"><strong>Trouble de la croissance :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Trouble de la croissance </mat-label>
+  <mat-select [(ngModel)]="fiche3.troubleCroi" ngModel name="troubleCroissance" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<div class="row">
+  <div class="column left">
+    <span class="label">Age chronologique au diagnostique :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Age chronologique au diagnostique </mat-label>
+      <mat-select [(ngModel)]="fiche3.aageChDiag" ngModel name="ageChronoDiag" required>
+        <mat-option *ngFor="let item of tab3 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">ans</span>
+
+    <br>
+
+    <span class="label">Age osseux :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Age osseux </mat-label>
+      <mat-select [(ngModel)]="fiche3.aageOssDiag" ngModel name="ageOsseux" required>
+        <mat-option *ngFor="let item of tab3 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">ans</span>
+
+    <br>
+
+    <span class="label">Retard par rapport à l'age chronologique :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Retard par rapport à l'age chronologique </mat-label>
+      <mat-select [(ngModel)]="fiche3.ageRetard" ngModel name="rpralc" required>
+        <mat-option *ngFor="let item of tab4 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">mois</span>
+
+    <br>
+
+    <span class="label">Poids :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Poids </mat-label>
+      <mat-select [(ngModel)]="fiche3.poids" ngModel name="po" required>
+        <mat-option *ngFor="let item of tab5 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">Kg</span>
+
+    <br>
+
+    <span class="label">Taille :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Taille </mat-label>
+      <mat-select [(ngModel)]="fiche3.taille" ngModel name="taille" required>
+        <mat-option *ngFor="let item of tab6 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">Cm</span>
+
+  </div>
+  <div class="column right">
+
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>mAgeChDiag</mat-label>
+      <mat-select [(ngModel)]="fiche3.mageChDiag" ngModel name="mAgeChDiag" required>
+        <mat-option *ngFor="let item of tab4 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">mois</span>
+
+    <br>
+
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>mAgeOssDiag</mat-label>
+      <mat-select [(ngModel)]="fiche3.mageOssDiag" ngModel name="mAgeOssDiag" required>
+        <mat-option *ngFor="let item of tab4 " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span class="label">mois</span>
+
+    <br><br><br><br>
+
+    <span class="label">DS :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>poidsDS</mat-label>
+      <mat-select [(ngModel)]="fiche3.poidsDS" ngModel name="poidsDS" required>
+        <mat-option *ngFor="let item of tabDS " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <span class="label">DS :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>tailleDS</mat-label>
+      <mat-select [(ngModel)]="fiche3.tailleDS" ngModel name="tailleDS" required>
+        <mat-option *ngFor="let item of tabDS " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+
+  </div>
+</div>
+<br>
+<hr><br>
+
+
+<span class="label"><strong>Atteinte cutanée :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Atteinte cutanée </mat-label>
+  <mat-select [(ngModel)]="fiche3.atteinteCut" ngModel name="AtteinteCutanee" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<span class="label">Tache(s) café au lait :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Tache(s) café au lait</mat-label>
+  <mat-select [(ngModel)]="fiche3.tacheCaf" ngModel name="tachecafalait" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+<div *ngIf="fiche3.tacheCaf=='Oui'">
+
+  <div class="row1">
+    <div class="column1 left1">
+    </div>
+    <div class="column1 right1">
+
+
+
+      <span class="label">Dos :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Dos</mat-label>
+        <mat-select [(ngModel)]="fiche3.dos" ngModel name="dos" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <span class="label">Ventre :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Ventre</mat-label>
+        <mat-select [(ngModel)]="fiche3.ventre" ngModel name="ventre" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <span class="label">Membres supérieurs :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Membres supérieurs</mat-label>
+        <mat-select [(ngModel)]="fiche3.membreSup" ngModel name="memsup" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <span class="label">Membres inférieurs :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Membres inférieurs</mat-label>
+        <mat-select [(ngModel)]="fiche3.membreInf" ngModel name="meminf" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <span class="label">Visage :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Visage</mat-label>
+        <mat-select [(ngModel)]="fiche3.visage" ngModel name="visage" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <span class="label">Thorax :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Thorax</mat-label>
+        <mat-select [(ngModel)]="fiche3.thorax" ngModel name="thorax" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+</div><br>
+
+<span class="label">Hyperpigmentation :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Hyperpigmentation</mat-label>
+  <mat-select [(ngModel)]="fiche3.hyperPig" ngModel name="hyperpigmentation" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+<span class="label">Couleur de la peau :</span>
+<mat-form-field>
+  <input type="text" matInput placeholder="Couleur de la peau" ngModel name="Couleur_de_la_peau" required
+    [(ngModel)]="fiche3.couleurPeau" #colorInput="ngModel">
+  <mat-error *ngIf="colorInput.hasError('required')">color must not be empty.</mat-error>
+</mat-form-field><br>
+
+<span class="label">Autre :</span>
+<mat-form-field>
+  <input type="text" matInput placeholder="Autre" ngModel name="Autre" required [(ngModel)]="fiche3.autreAtCut"
+    #autreInput="ngModel">
+  <mat-error *ngIf="autreInput.hasError('required')">autre must not be empty.</mat-error>
+</mat-form-field>
+
+<br>
+<hr><br>
+
+<span class="label"><strong>Atteinte de la téte :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Atteinte de la téte </mat-label>
+  <mat-select [(ngModel)]="fiche3.atteinteTete" ngModel name="AtteinteTete" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<table width="100%">
+  <tr>
+    <td width="20%">
+      <span class="label">Microséphalie :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Microséphalie </mat-label>
+        <mat-select [(ngModel)]="fiche3.microcephalie" ngModel name="microséphalie" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+
+    <td width="20%">
+      <span class="label">Faciès triangulaire :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Faciès triangulaire </mat-label>
+        <mat-select [(ngModel)]="fiche3.facieTrig" ngModel name="faciesTriang" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+
+    <td width="20%">
+      <span class="label">Traits fins :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Traits fins </mat-label>
+        <mat-select [(ngModel)]="fiche3.traitsFin" ngModel name="traitsFins" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+
+    <td width="20%">
+      <span class="label">Microphtalmie : </span>
+      <mat-form-field appearance="fill">
+        <mat-label>Microphtalmie</mat-label>
+        <mat-select [(ngModel)]="fiche3.microphtalmie" ngModel name="Microphtalmie" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+
+    <td width="20%">
+      <span class="label">Autre :</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Autre" ngModel name="Autre1" required [(ngModel)]="fiche3.autreAtTete"
+          #autre1Input="ngModel">
+        <mat-error *ngIf="autre1Input.hasError('required')">autre must not be empty.</mat-error>
+      </mat-form-field>
+    </td>
+
+  </tr>
+</table>
+
+
+<br>
+<hr><br>
+
+<span class="label"><strong>Malformation urogénitale :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Malformation urogénitale </mat-label>
+  <mat-select [(ngModel)]="fiche3.malUro" ngModel name="AtteinteTete" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+
+
+<div>
+
+  <div style="width: 50%; float:left">
+    <span class="label">UIV :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>UIV </mat-label>
+      <mat-select [(ngModel)]="fiche3.uiv" ngModel name="uiv" required>
+        <mat-option *ngFor="let item of tabenum2 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div style="width: 50%; float:right">
+    <span class="label">Echo :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Echo</mat-label>
+      <mat-select [(ngModel)]="fiche3.echo" ngModel name="echo" required>
+        <mat-option *ngFor="let item of tabenum2 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</div>
+
+
+<span class="label">Rein ectopique</span>
+<mat-form-field appearance="fill">
+  <mat-label>Rein ectopique </mat-label>
+  <mat-select [(ngModel)]="fiche3.reinEctop" ngModel name="reinEctopique" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="fiche3.reinEctop=='Oui'">
+  <div style="width: 50%; float:right"><span class="label">Siége d'ectopie :</span>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Siége d'ectopie" ngModel name="Siége_d_ectopie" required
+        [(ngModel)]="fiche3.siegeEctopie" #siegeInput="ngModel">
+      <mat-error *ngIf="siegeInput.hasError('required')">Siege must not be empty.</mat-error>
+    </mat-form-field>
+  </div>
+</div><br><br><br>
+
+
+<div id="wrapper">
+
+  <div id="c1">
+
+    <span class="label">Rein en fer à cheval</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Rein en fer à cheval</mat-label>
+      <mat-select [(ngModel)]="fiche3.reinFerChev" ngModel name="reinFerChev" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div id="c2">
+
+    <span class="label">Petit rein</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Petit rein</mat-label>
+      <mat-select [(ngModel)]="fiche3.petitRein" ngModel name="petitRein" required>
+        <mat-option *ngFor="let item of tabepRein " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div id="c3">
+
+
+    <span class="label">Rein unique</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Rein unique </mat-label>
+      <mat-select [(ngModel)]="fiche3.reinUnique" ngModel name="reinUnique" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</div>
+
+<span class="label">Ectopie testiculaire :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Ectopie testiculaire </mat-label>
+  <mat-select [(ngModel)]="fiche3.ectopTest" ngModel name="EctTest" required>
+    <mat-option *ngFor="let item of tabEctoTest " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<span class="label">Anomalie de la verge :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Anomalie de la verge</mat-label>
+  <mat-select [(ngModel)]="fiche3.anomVerge" ngModel name="AnomVerg" required>
+    <mat-option *ngFor="let item of tabAnomVerg " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<span class="label">Anomalie des voies urinaires :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Anomalie des voies urinaires</mat-label>
+  <mat-select [(ngModel)]="fiche3.anomVoisUri" ngModel name="anomalieVUr" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div *ngIf="fiche3.anomVoisUri=='Oui'">
+  <div style="width: 50%; float:right"><span class="label">Type d'Anomalie :</span>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Type d'Anomalie" ngModel name="Type_d_Anomalie" required
+        [(ngModel)]="fiche3.typeAnomVoisUri" #typeanomalieInput="ngModel">
+      <mat-error *ngIf="typeanomalieInput.hasError('required')">Type anomalie must not be empty.</mat-error>
+    </mat-form-field>
+  </div>
+</div><br><br><br>
+
+<span class="label">Retard pubertaire :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Retard pubertaire</mat-label>
+  <mat-select [(ngModel)]="fiche3.retardPubertaire" ngModel name="RetardPub" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<table width="100%" *ngIf="fiche3.retardPubertaire=='Oui'">
+  <tr>
+    <td width="12%"></td>
+
+    <td width="22%">Stade de Tanner : </td>
+
+    <td width="22%">
+
+      <span class="label">M</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="M" ngModel name="M" required [(ngModel)]="fiche3.mtanner"
+          #MInput="ngModel">
+        <mat-error *ngIf="MInput.hasError('required')">M must not be empty.</mat-error>
+      </mat-form-field>
+
+    </td>
+
+    <td width="22%">
+
+      <span class="label">P</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="P" ngModel name="P" required [(ngModel)]="fiche3.ptanner"
+          #PInput="ngModel">
+        <mat-error *ngIf="PInput.hasError('required')">P must not be empty.</mat-error>
+      </mat-form-field>
+
+    </td>
+
+    <td width="22%">
+
+      <span class="label">T</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="T" ngModel name="T" required [(ngModel)]="fiche3.ttanner"
+          #TInput="ngModel">
+        <mat-error *ngIf="TInput.hasError('required')">T must not be empty.</mat-error>
+      </mat-form-field>
+
+    </td>
+
+  </tr>
+</table><br>
+
+<span class="label">Autre :</span>
+<mat-form-field>
+  <input type="text" matInput placeholder="Autre" ngModel name="Autrel" required [(ngModel)]="fiche3.autreUrogenital"
+    #AutremInput="ngModel">
+  <mat-error *ngIf="AutremInput.hasError('required')">Autre must not be empty.</mat-error>
+</mat-form-field>
+
+<br>
+<hr><br>
+
+<span class="label"><strong>Atteinte osseuse :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Atteinte osseuse </mat-label>
+  <mat-select [(ngModel)]="fiche3.atteinteOss" ngModel name="Atteinteos" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<div id="gg">
+  <div style="width: 90%;height: 100%; float:right">
+    <span class="label">Anomalie de pouce :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Anomalie de pouce </mat-label>
+      <mat-select [(ngModel)]="fiche3.anomPouce" ngModel name="AnomaliePouce" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <span class="label">Anomalie des autres doigts :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Anomalie des autres doigts </mat-label>
+      <mat-select [(ngModel)]="fiche3.anomAutreDoigts" ngModel name="AnomalieDoigts" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <div style="width: 90%; float:right" *ngIf="fiche3.anomAutreDoigts=='Oui'">
+
+      <table width="100%">
+        <tr>
+          <td width="33%">
+
+            <span class="label">Courts et trapus :</span>
+            <mat-form-field appearance="fill">
+              <mat-label>Courts et trapus </mat-label>
+              <mat-select [(ngModel)]="fiche3.courtsTrapus" ngModel name="courttrap" required>
+                <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </td>
+
+          <td width="33%">
+
+            <span class="label">Syndactylie :</span>
+            <mat-form-field appearance="fill">
+              <mat-label>Syndactylie</mat-label>
+              <mat-select [(ngModel)]="fiche3.syndactylie" ngModel name="Syndactylie" required>
+                <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </td>
+
+          <td width="34%">
+
+            <span class="label">Autre :</span>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Autre" ngModel name="Autrev" required
+                [(ngModel)]="fiche3.autreAnomAutreDoigts" #AutrevInput="ngModel">
+              <mat-error *ngIf="AutremInput.hasError('required')">Autre must not be empty.</mat-error>
+            </mat-form-field>
+
+          </td>
+
+        </tr>
+      </table>
+
+
+    </div><br><br><br><br>
+
+    <span class="label">Agénésie du radius :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Agénésie du radius </mat-label>
+      <mat-select [(ngModel)]="fiche3.agenesieRadius" ngModel name="AgénésieRadius" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <span class="label">Anomalie des orteils :</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Anomalie des orteils </mat-label>
+      <mat-select [(ngModel)]="fiche3.anomOrteil" ngModel name="AnomalieOrteils" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <div style="width: 90%; float:right" *ngIf="fiche3.anomOrteil=='Oui'">
+
+      <span class="label">Type d'anomalie(s) :</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Type d'anomalie(s) " ngModel name="TypeAnomalie " required
+          [(ngModel)]="fiche3.typeAnomOrteil" #typeAnomomalieInput="ngModel">
+        <mat-error *ngIf="typeAnomomalieInput.hasError('required')">Type d'anomalie(s) must not be empty.</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <div>
+      <div style="width: 50%; float:left">
+
+
+
+        <span class="label">Spina Bifida :</span>
+        <mat-form-field appearance="fill">
+          <mat-label>Spina Bifida </mat-label>
+          <mat-select [(ngModel)]="fiche3.bifide" ngModel name="SpinaBifida" required>
+            <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+        <span class="label">Luxation congénitale de la hanche :</span>
+        <mat-form-field appearance="fill">
+          <mat-label>Luxation congénitale de la hanche </mat-label>
+          <mat-select [(ngModel)]="fiche3.luxCongHanche" ngModel name="LuxationConj" required>
+            <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+
+      <div style="width: 50%; float:right">
+
+
+        <span class="label">Autre(s) anomalie(s) du rachis (Présiser) :</span>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Autre(s) anomalie(s) du rachis " ngModel name="AnomalieRachis"
+            required [(ngModel)]="fiche3.anomRachis" #AnomomalieRachisInput="ngModel">
+          <mat-error *ngIf="AnomomalieRachisInput.hasError('required')">anomalie(s) du rachis must not be empty.
+          </mat-error>
+        </mat-form-field><br>
+
+        <span class="label">Autre(s) anomalie(s) osseuse(s) (Présiser) :</span>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Autre(s) anomalie(s) osseuse(s)" ngModel name="AnomalieOsseuse"
+            required [(ngModel)]="fiche3.autreAnomOss" #anomalieOsseuseInput="ngModel">
+          <mat-error *ngIf="anomalieOsseuseInput.hasError('required')">anomalie(s) osseuse(s) must not be empty.
+          </mat-error>
+        </mat-form-field>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="width: 10%;height: 100%;float:left;"></div>
+</div>
+
+
+<br>
+<hr><br>
+
+
+<span class="label"><strong>Anomalie neurologique :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Anomalie neurologique </mat-label>
+  <mat-select [(ngModel)]="fiche3.anomNeuro" ngModel name="AnomalieNeuro" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<div id="gg">
+  <div style="width: 90%; float:right">
+
+    <table width="100%">
+      <tr>
+        <td width="33%">
+
+          <span class="label">Retard Mental :</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Retard Mental </mat-label>
+            <mat-select [(ngModel)]="fiche3.retardMent" ngModel name="RetardMental" required>
+              <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <br>
+
+          <span class="label">Performance scolaire :</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Performance scolaire</mat-label>
+            <mat-select [(ngModel)]="fiche3.performanceScolaire" ngModel name="PerformanceScolaire" required>
+              <mat-option *ngFor="let item of tabperfSco " value="{{item}}">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </td>
+
+        <td width="33%">
+
+          <span class="label">Hypoacousie :</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Hypoacousie</mat-label>
+            <mat-select [(ngModel)]="fiche3.hypoacousie" ngModel name="Hypoacousie" required>
+              <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
+
+          <span class="label">Autre :</span>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Autre" ngModel name="Autrew" required
+              [(ngModel)]="fiche3.autreAnomNeuro" #AutrewInput="ngModel">
+            <mat-error *ngIf="AutrewInput.hasError('required')">autre must not be empty.
+            </mat-error>
+          </mat-form-field>
+
+        </td>
+
+        <td width="34%">
+
+          <span class="label">Strabisme :</span>
+          <mat-form-field appearance="fill">
+            <mat-label>Strabisme</mat-label>
+            <mat-select [(ngModel)]="fiche3.strabisme" ngModel name="Strabisme" required>
+              <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </td>
+
+      </tr>
+    </table>
+
+
+  </div>
+  <div style="width: 10%;height: 100%;float:left;"></div>
+</div>
+
+<br>
+<hr><br>
+
+
+<span class="label"><strong>Anomalie Cardio-Vasculaire :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Anomalie Cardio-Vasculaire</mat-label>
+  <mat-select [(ngModel)]="fiche3.anomCardVas" ngModel name="Anomalie_Cardio_Vasculaire" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<div id="gg">
+  <div style="width: 90%; float:right">
+
+    <span class="label">Echo coeur faite</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Echo coeur faite</mat-label>
+      <mat-select [(ngModel)]="fiche3.echoCoeur" ngModel name="Echo_coeur_faite" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div id="gg" *ngIf="fiche3.echoCoeur=='Oui'">
+      <div style="width: 90%; float:right">
+
+
+        <span class="label">Présiser les anomalies :</span>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Présiser les anomalies" ngModel name="Panomalie" required
+            [(ngModel)]="fiche3.preciseAnomCardio" #panomInput="ngModel">
+          <mat-error *ngIf="panomInput.hasError('required')">anomalies must not be empty.
+          </mat-error>
+        </mat-form-field>
+
+
+      </div>
+      <div style="width: 10%;height: 100%;float:left;"></div>
+
+
+    </div>
+
+  </div>
+  <div style="width: 10%;height: 100%;float:left;"></div>
+
+
+</div>
+
+<br>
+<hr><br>
+
+<span class="label"><strong>Anomalie Digestive :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Anomalie Digestive</mat-label>
+  <mat-select [(ngModel)]="fiche3.anomDig" ngModel name="Anomalie_Digestive" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<div id="gg" *ngIf="fiche3.anomDig=='Oui'">
+  <div style="width: 90%; float:right">
+
+    <span class="label">Présiser les anomalies :</span>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Présiser les anomalies" ngModel name="Panomalie" required
+        [(ngModel)]="fiche3.preciseAnomDig" #panom1Input="ngModel">
+      <mat-error *ngIf="panom1Input.hasError('required')">anomalies must not be empty.
+      </mat-error>
+    </mat-form-field>
+
+
+  </div>
+
+  <div style="width: 10%;height: 100%;float:left;"></div>
+
+
+</div>
+
+
+<br>
+<hr><br>
+
+
+<span class="label"><strong>Endocrinopathie :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Endocrinopathie</mat-label>
+  <mat-select [(ngModel)]="fiche3.endocrinopathie" ngModel name="Endocrinopathiee" required>
+    <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<table style="width: 100%;" *ngIf="fiche3.endocrinopathie=='Oui'">
+  <tr>
+
+    <td style="width: 33%;">
+
+      <span class="label">Diabéte :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Diabéte</mat-label>
+        <mat-select [(ngModel)]="fiche3.diabete" ngModel name="Diabéte" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <span class="label">Hypothyroidie :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Hypothyroidie</mat-label>
+        <mat-select [(ngModel)]="fiche3.hypothyroidie" ngModel name="Hypothyroidie" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </td>
+
+    <td style="width: 33%;">
+
+      <span class="label">Age de découverte :</span>
+      <mat-form-field>
+        <input type="number" matInput placeholder="Age de découverte" ngModel name="Age_de_decouverte" required
+          [(ngModel)]="fiche3.ageDecouverte" #agedInput="ngModel">
+        <mat-error *ngIf="agedInput.hasError('required')">Age de découverte must not be empty.
+        </mat-error>
+      </mat-form-field><br>
+
+      <span class="label">Autres symptomes endociniens:</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Autres symptomes endociniens" ngModel name="autresSymp" required
+          [(ngModel)]="fiche3.autreSympEndo" #autresSympInput="ngModel">
+        <mat-error *ngIf="autresSympInput.hasError('required')">symptomes must not be empty.
+        </mat-error>
+      </mat-form-field>
+
+
+
+    </td>
+
+    <td style="width: 34%;">
+
+      <span class="label">Déficites en GH :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Déficites en GH</mat-label>
+        <mat-select [(ngModel)]="fiche3.deficiteGH" ngModel name="Déficites_en_GH" required>
+          <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </td>
+
+  </tr>
+</table>
+
+<br>
+<hr><br>
+
+<span class="label"><strong>Autre(s) anomalie(s) congénital(s) :</strong></span>
+<mat-form-field>
+  <input type="text" matInput placeholder="Autre(s) anomalie(s) congénital(s)" ngModel name="autresanoCong" required
+    [(ngModel)]="fiche3.autreAnomCong" #autresanoCongInput="ngModel">
+  <mat-error *ngIf="autresanoCongInput.hasError('required')">anomalies must not be empty.
+  </mat-error>
+</mat-form-field>
+

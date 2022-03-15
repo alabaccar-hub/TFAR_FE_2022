@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="column">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Num dossier</mat-label>
+          <input type="text" matInput placeholder="the number of folder of the patient" ngModel name="numDPatient"
+            required [(ngModel)]="patient.ndPatient"  #numDPatientInput="ngModel">
+        </mat-form-field>
+  
+  
+  
+        <div class="example-full-width">
+          <mat-label>Sexe : </mat-label>
+  
+          <mat-radio-group name="opList" [(ngModel)]="patient.sexe" ngModel>
+            <mat-radio-button *ngFor="let op of list" [value]="op.name" name="opList" (change)="radioChange(op.name)">{{
+              op.name}}</mat-radio-button>
+          </mat-radio-group>
+  
+  
+        </div>
+  
+  
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Adresse</mat-label>
+          <input type="text" matInput placeholder="the adress of patient" ngModel name="adressPatient" required
+            [(ngModel)]="patient.adresse" #adressPatientInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Tel</mat-label>
+          <input type="text" matInput placeholder="phone of the patient" ngModel name="phonePatient" required
+            [(ngModel)]="patient.tel"  #phonePatientInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Nom de la mére</mat-label>
+          <input type="text" matInput placeholder="the name of the mother of the patient" ngModel name="nameMPatient"
+            required [(ngModel)]="patient.nomMere"  #nameMPatientInput="ngModel">
+        </mat-form-field>
+  
+  
+    </div>
+    <div class="column">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Nom</mat-label>
+          <input type="text" matInput placeholder="name of the patient" ngModel name="namePatient" required
+            [(ngModel)]="patient.nom" #namePatientInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Date de naissance</mat-label>
+          <mat-form-field appearance="fill" class="item">
+            <input matInput [matDatepicker]="pickero" [(ngModel)]="patient.dateNaissance">
+            <mat-datepicker-toggle matSuffix [for]="pickero"></mat-datepicker-toggle>
+            <mat-datepicker #pickero></mat-datepicker>
+          </mat-form-field>
+  
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Repère éventuel</mat-label>
+          <input type="text" matInput placeholder="eventual repere of the patient" ngModel name="eventualRPatient"
+            required [(ngModel)]="patient.reperes"  #eventualRPatientInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Prénom du pére</mat-label>
+          <input type="text" matInput placeholder="name of the father of patient" ngModel name="nameFPatient" required
+            [(ngModel)]="patient.prenomPere"  #nameFPInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Prénom de la mére</mat-label>
+          <input type="text" matInput placeholder="name of the mother of patient" ngModel name="nameMPatient" required
+            [(ngModel)]="patient.prenomMere"  #nameMPInput="ngModel">
+        </mat-form-field>
+  
+  
+    </div>
+    <div class="column">
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Prénom</mat-label>
+          <input type="text" matInput placeholder="prenom patient" ngModel name="prenomPatient" required
+            [(ngModel)]="patient.prenom"  #prenompInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Lieu de naissance</mat-label>
+          <input type="text" matInput placeholder="place of birth of the patient" ngModel name="birthpPatient" required
+            [(ngModel)]="patient.lieuNaissance"  #birthpInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Gouvernorat</mat-label>
+  
+  
+          <div>
+            <span class="label">Departement :</span>
+            <mat-form-field appearance="fill" class="item">
+              <mat-select [(ngModel)]="patient.gouvernorat" ngModel name="gouvernorat" required >
+                <mat-option *ngFor="let item of gouvernorat " value="{{item}}">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+  
+  
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Nom de la grand mére paternelle</mat-label>
+          <input type="text" matInput placeholder="paternal grand mother of the patient" ngModel name="paternalgmPatient"
+            required [(ngModel)]="patient.nomGmp"  #nomGmpInput="ngModel">
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Nom de la grand mére maternelle</mat-label>
+          <input type="text" matInput placeholder="maternal grand mother of the patient" ngModel name="maternalgmPatient"
+            required [(ngModel)]="patient.nomGmm"  #nomGmmInput="ngModel">
+        </mat-form-field>
+  
+    </div>
+  </div>
+  
+  

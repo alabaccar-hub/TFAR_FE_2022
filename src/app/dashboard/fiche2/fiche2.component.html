@@ -1,0 +1,211 @@
+<div class="container">
+    <mat-toolbar color="primary">
+      <span class="fill-remaining-space"></span>
+      <span>Fiche</span>
+      <span class="fill-remaining-space"></span>
+    </mat-toolbar>
+  </div>
+  
+  <div class="fiche-details-container">
+    <div class="left">
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>User</mat-label>
+  
+        <!--<mat-select [(value)]="ficheI.codeUser"  name="UserOfFiche" required>
+          <mat-option *ngFor="let item of users$ | async " [value]="item.code" >{{item.nom}}</mat-option>
+        </mat-select>-->
+  
+        <mat-select [(ngModel)]="ficheI.codeUser" ngModel name="UserOfFiche" required>
+          <mat-option *ngFor="let item of users$ | async " [value]="item.code" >{{item.nom}}</mat-option>
+        </mat-select>
+  
+      </mat-form-field>
+  
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Date d'enregistrement</mat-label>
+  
+        <input matInput [matDatepicker]="dateEnreg" [(ngModel)]="ficheI.dateEnregistrement" (click)="do()">
+        <mat-datepicker-toggle matSuffix [for]="dateEnreg"></mat-datepicker-toggle>
+        <mat-datepicker #dateEnreg></mat-datepicker>
+  
+      </mat-form-field>
+  
+  
+  
+  
+    </div>
+  
+    <div class="right">
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Date de diagnostique</mat-label>
+  
+        <input matInput [matDatepicker]="dateDiag" [(ngModel)]="ficheI.dateDiagnostique" >
+        <mat-datepicker-toggle matSuffix [for]="dateDiag"></mat-datepicker-toggle>
+        <mat-datepicker #dateDiag></mat-datepicker>
+  
+      </mat-form-field>
+  
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Numéro de Dossier Fiche </mat-label>
+  
+        <input type="text" matInput placeholder="Numéro de Dossier Fiche" ngModel name="NDFiche" required
+          [(ngModel)]="ficheI.ndossierFiche" #ndficheInput="ngModel">
+        <mat-error *ngIf="ndficheInput.hasError('required')">ndfiche must not be empty.</mat-error>
+  
+      </mat-form-field>
+  
+  
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  
+  
+  <form>
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Identification du Patient
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-patient [patientUpd]='patientupdate'></fiche2-patient>
+  
+      </mat-expansion-panel>
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Histoire Familiale
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-histoire-familiale [histoireFam]='HistoireFamiliale'></fiche2-histoire-familiale>
+  
+      </mat-expansion-panel>
+  
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Circonstances de découverte
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-circon-de-decouverte [circonstanceDec]='circonstanceDecouverte'></fiche2-circon-de-decouverte>
+  
+      </mat-expansion-panel>
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sandrome Malformatif
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-syndrome-malformatif [SyndromeMalf]='SyndromeMalformatif'></fiche2-syndrome-malformatif>
+      </mat-expansion-panel>
+  
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Etude Cytogenetique
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-etude-cyto [etudeCytoUpd]='EtudeCyto'></fiche2-etude-cyto>
+  
+      </mat-expansion-panel>
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Androgene
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-androgene [androgeneUpd]='androgene'></fiche2-androgene>
+  
+      </mat-expansion-panel>
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Signes Hématologiques
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-signes-hema [SignesHemaUpd]='SignesHema'></fiche2-signes-hema>
+  
+      </mat-expansion-panel>
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Biologie Moléculaire
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-biologie-moleculaire [BiologieMole]='BiologieMoleculaire'></fiche2-biologie-moleculaire>
+  
+      </mat-expansion-panel>
+  
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Congélation de Cellules
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-congelation-cell [CongelationCellUpd]='CongelationCell'></fiche2-congelation-cell>
+      </mat-expansion-panel>
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Score Clinique
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-score-clinique [ScoreCliniqueUpd]='ScoreClinique'></fiche2-score-clinique>
+      </mat-expansion-panel>
+  
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Traitement
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <fiche2-traitement [traitementUpd]='Traitement'></fiche2-traitement>
+      </mat-expansion-panel>
+  
+  
+    </mat-accordion>
+  </form>
+  <div fxLayoutAlign="center center">
+  
+    <button mat-raised-button color="primary" (click)="submit();">Ajouter</button>
+    <button mat-raised-button color="warn" (click)="toFiche()">Quitter</button>
+  </div>
+  
+  

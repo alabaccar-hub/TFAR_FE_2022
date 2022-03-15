@@ -1,0 +1,54 @@
+<div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Examen 1
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <app-essai-cyto [etudeCytoUpd1]="cyto1"></app-essai-cyto>
+  
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Examen 2
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <app-essai-cyto [etudeCytoUpd1]="cyto2"></app-essai-cyto>
+  
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Examen 3
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <app-essai-cyto [etudeCytoUpd1]="cyto3"></app-essai-cyto>
+  
+  
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Examen 4
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <app-essai-cyto [etudeCytoUpd1]="cyto4"></app-essai-cyto>
+  
+  
+    </mat-expansion-panel>
+  
+  </mat-accordion>
+  
+  
+  

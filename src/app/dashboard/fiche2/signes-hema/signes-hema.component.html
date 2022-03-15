@@ -1,0 +1,234 @@
+<p><strong>Numération sanguine au diagnostic :</strong></p>
+
+<div id="conteneur">
+
+
+  <div>
+
+    <span class="label">Hb :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Hb" ngModel name="Hb" required
+        [(ngModel)]="fiche4.hb" #hbInput="ngModel">
+      <mat-error *ngIf="hbInput.hasError('required')">Hb must not be empty.</mat-error>
+    </mat-form-field><br>
+
+    <span class="label">Leuco :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Leuco" ngModel name="Leuco" required
+        [(ngModel)]="fiche4.leuco" #leucoInput="ngModel">
+      <mat-error *ngIf="leucoInput.hasError('required')">leuco must not be empty.</mat-error>
+    </mat-form-field>
+
+
+  </div>
+
+
+  <div>
+
+    <span class="label">VGM :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="VGM" ngModel name="VGM" required
+        [(ngModel)]="fiche4.vgm" #vgmInput="ngModel">
+      <mat-error *ngIf="vgmInput.hasError('required')">vgm must not be empty.</mat-error>
+    </mat-form-field><br>
+
+    <span class="label">PNN :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="PNN" ngModel name="PNN" required
+        [(ngModel)]="fiche4.pnn" #pnnInput="ngModel">
+      <mat-error *ngIf="pnnInput.hasError('required')">pnn must not be empty.</mat-error>
+    </mat-form-field>
+
+
+  </div>
+
+
+  <div>
+
+    <span class="label">Retic :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Retic" ngModel name="Retic" required
+        [(ngModel)]="fiche4.retic" #reticInput="ngModel">
+      <mat-error *ngIf="reticInput.hasError('required')">color must not be empty.</mat-error>
+    </mat-form-field><br>
+
+    <span class="label">Plq :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Plq" ngModel name="Plq" required
+        [(ngModel)]="fiche4.plq" #plqInput="ngModel">
+      <mat-error *ngIf="plqInput.hasError('required')">color must not be empty.</mat-error>
+    </mat-form-field>
+
+
+  </div>
+
+
+</div>
+
+<br>
+<hr><br>
+
+<span class="label"><Strong>Age du début des manifestations hématologiques :</Strong></span>
+<mat-form-field>
+  <input type="number" matInput placeholder="Age du début des manifestations hématologiques" ngModel name="agedeb"
+    required  [(ngModel)]="fiche4.ageDebutManiHema" #agedebInput="ngModel">
+  <mat-error *ngIf="agedebInput.hasError('required')">Age du début must not be empty.</mat-error>
+</mat-form-field> <span class="label">ans</span>
+<br>
+
+
+<div id="conteneur1">
+
+  <div>
+    Type de manifestation :
+  </div>
+
+
+  <div>
+
+    <span class="label"><strong>Hb inférieur à 10 g :</strong></span>
+    <mat-form-field appearance="fill">
+      <mat-label>Hb inférieur à 10 g </mat-label>
+      <mat-select [(ngModel)]="fiche4.hbInf" ngModel name="Hb_inf_10g" required >
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+
+  <div>
+
+    <span class="label"><strong>Plq inférieur à 100000 :</strong></span>
+    <mat-form-field appearance="fill">
+      <mat-label>Plq inférieur à 100000 </mat-label>
+      <mat-select [(ngModel)]="fiche4.plq_inf" ngModel name="Plq_inf_100000" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+
+  <div>
+
+    <span class="label"><strong>PNN inférieur à 2000 :</strong></span>
+    <mat-form-field appearance="fill">
+      <mat-label>PNN inférieur à 2000 </mat-label>
+      <mat-select [(ngModel)]="fiche4.pnnInf" ngModel name="faciesTriang" required>
+        <mat-option *ngFor="let item of tabenum1 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+
+</div>
+
+<br>
+<hr><br>
+
+<div id="conteneur2">
+
+  <div>
+
+    <span class="label"><strong>Electrophorése de l'Hb :</strong></span>
+    <mat-form-field appearance="fill">
+      <mat-label>Electrophorése de l'Hb </mat-label>
+      <mat-select [(ngModel)]="fiche4.electrophoreseHb" ngModel name="Electropho" required>
+        <mat-option *ngFor="let item of tabenum2 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+
+  <div>
+
+    <span class="label">Hbf :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Hbf" ngModel name="Hbf" required
+        [(ngModel)]="fiche4.hbf" #hbfInput="ngModel">
+      <mat-error *ngIf="hbfInput.hasError('required')">Hbf du début must not be empty.</mat-error>
+    </mat-form-field> <span class="label">%</span>
+
+  </div>
+
+
+</div>
+
+<br>
+<hr><br>
+
+<span class="label"><strong>Myélogramme au diagnostic :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Myélogramme au diagnostic </mat-label>
+  <mat-select [(ngModel)]="fiche4.myelogramme" ngModel name="MyelogrammeDiag" required>
+    <mat-option *ngFor="let item of tabenum2 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+<span class="label"><strong>Cellularité :</strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Cellularité </mat-label>
+  <mat-select [(ngModel)]="fiche4.cellularite" ngModel name="Cellularite" required>
+    <mat-option *ngFor="let item of tabenum4 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div id="conteneur3">
+
+  <div>
+
+    <span class="label">Erythroblastes :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Erythroblastes" ngModel name="Erythroblastes" required
+         [(ngModel)]="fiche4.erythroblaste" #ErythroblastesInput="ngModel">
+      <mat-error *ngIf="ErythroblastesInput.hasError('required')">Erythroblastes du début must not be empty.</mat-error>
+    </mat-form-field> <span class="label">%</span>
+
+  </div>
+
+  <div>
+
+    <span class="label">Morphologie</span>
+    <mat-form-field appearance="fill">
+      <mat-label>Morphologie</mat-label>
+      <mat-select [(ngModel)]="fiche4.morphologie" ngModel name="Morphologie" required>
+        <mat-option *ngFor="let item of tabenum5 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+</div>
+
+<br>
+<hr><br>
+
+<div id="conteneur2">
+
+  <div>
+
+    <span class="label"><strong>BOM :</strong></span>
+    <mat-form-field appearance="fill">
+      <mat-label>BOM </mat-label>
+      <mat-select [(ngModel)]="fiche4.bom" ngModel name="BOM" required>
+        <mat-option *ngFor="let item of tabenum6 " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div>
+
+    <span class="label">Pourcentage d'adipocytes :</span>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Pourcentage d'adipocytes" ngModel name="PourcentageAdipocytes" required
+       [(ngModel)]="fiche4.pourcenAdipo" #pourcAdiInput="ngModel">
+      <mat-error *ngIf="pourcAdiInput.hasError('required')">Erythroblastes du début must not be empty.</mat-error>
+    </mat-form-field> <span class="label">%</span>
+
+  </div>
+
+</div>
+

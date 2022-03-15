@@ -1,0 +1,54 @@
+<section class="signup-form">
+    <form fxLayout="column" fxLayoutAlign="center center" #f="ngForm">
+  
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your nom Organisme" ngModel name="Nom_Organisme" required
+          [(ngModel)]="organisme.nom" #nomHInput="ngModel">
+        <mat-error *ngIf="nomHInput.hasError('required')">nom must not be empty.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your adress organisme" ngModel name="Adresse_Organisme" required
+          [(ngModel)]="organisme.adresse" #nomHInput="ngModel">
+        <mat-error *ngIf="nomHInput.hasError('required')">adress must not be empty.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your tel organisme" ngModel name="Tel_Organisme" required
+          [(ngModel)]="organisme.tel" #nomHInput="ngModel">
+        <mat-error *ngIf="nomHInput.hasError('required')">tel must not be empty.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your contact organisme" ngModel name="Contact_Organisme" required
+          [(ngModel)]="organisme.contact" #nomHInput="ngModel">
+        <mat-error *ngIf="nomHInput.hasError('required')">contact must not be empty.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="text" matInput placeholder="Your email organisme" ngModel name="Email_Organisme" required
+          [(ngModel)]="organisme.email" #nomHInput="ngModel">
+        <mat-error *ngIf="nomHInput.hasError('required')">email must not be empty.</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Your type organisme</mat-label>
+        <mat-select [(ngModel)]="organisme.type" ngModel name="Type_Organisme" required>
+          <mat-option value="Hopital">Hopital</mat-option>
+          <mat-option value="Institut">Institut</mat-option>
+          <mat-option value="CabinePrive">Cabine Privé</mat-option>
+          <mat-option value="universite">Université</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <div class="button-row">
+        <button mat-raised-button color="primary" [disabled]="f.invalid" [mat-dialog-close]="organisme"
+          (click)="todo(organisme)">Submit</button>
+        <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+  
+      </div>
+  
+    </form>
+  </section>
+  
+  

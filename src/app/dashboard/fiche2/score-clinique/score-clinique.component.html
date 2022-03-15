@@ -1,0 +1,25 @@
+<span class="label">Score Clinique :</span>
+<mat-form-field>
+  <input type="number" matInput placeholder="Score Clinique" ngModel name="Score_Clinique" required
+    [(ngModel)]="fiche7.scoreClinique" #nomHInput="ngModel">
+  <mat-error *ngIf="nomHInput.hasError('required')">score clinique must not be empty.</mat-error>
+</mat-form-field>
+
+<br>
+<span class="label">Score EBMT :</span>
+<mat-form-field>
+  <input type="number" matInput placeholder="Score EBMT" ngModel name="Score_EBMT" required  [(ngModel)]="fiche7.scoreEBMT"
+    #nomHInput="ngModel">
+  <mat-error *ngIf="nomHInput.hasError('required')">score EBMT must not be empty.</mat-error>
+</mat-form-field>
+
+<br>
+
+<span class="label">Score :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Score </mat-label>
+  <mat-select [(ngModel)]="fiche7.score" ngModel name="score" required>
+    <mat-option *ngFor="let item of score " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+

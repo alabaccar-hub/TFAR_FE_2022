@@ -1,0 +1,110 @@
+<span class="label">Lymphocytes Sangains</span>
+<mat-form-field appearance="fill">
+  <mat-label>Lymphocytes </mat-label>
+  <mat-select [(ngModel)]="cytogenetique.lymphocytes" ngModel name="Lymphocytes" required>
+    <mat-option *ngFor="let item of lymphoTab " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<div id="conteneur1">
+
+  <span class="label">Date : </span>
+  <mat-form-field appearance="fill">
+    <mat-label> Date </mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="cytogenetique.dateSang">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field><br>
+
+  <span class="label">Laboratoire de cytogenetique</span>
+  <mat-form-field appearance="fill">
+    <mat-label>Labo Cyto </mat-label>
+    <mat-select [(ngModel)]="cytogenetique.idLaboratoire" ngModel name="idLabo" required>
+      <mat-option *ngFor="let item of laboratoires$ | async" [value]="item.id">{{item.nom}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div><br>
+
+<div id="conteneur1">
+  <div>
+    <span class="label">Agent portant : </span>
+    <mat-form-field appearance="fill">
+      <mat-label>Agent portant </mat-label>
+      <mat-select [(ngModel)]="cytogenetique.agentPortant" ngModel name="agentPortant" required>
+        <mat-option *ngFor="let item of agentPortantTab" value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <span class="label">Instabilite : </span>
+    <mat-form-field appearance="fill">
+      <mat-label>Instabilite </mat-label>
+      <mat-select [(ngModel)]="cytogenetique.instabilite" ngModel name="instabilite" required>
+        <mat-option *ngFor="let item of instabiliteTab" value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Inst Pourcentage </mat-label>
+      <input type="number" matInput ngModel name="instabilitePourcentage" required
+        [(ngModel)]="cytogenetique.instabilitePourcentage" #instPInput="ngModel">
+    </mat-form-field>
+    <span class="label">%</span>
+  </div>
+
+
+
+  <div><span class="label">IR : </span>
+    <mat-form-field appearance="fill">
+      <mat-label>IR </mat-label>
+      <mat-select [(ngModel)]="cytogenetique.ir" ngModel name="ir" required>
+        <mat-option *ngFor="let item of irTab" value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Ir Pourcentage </mat-label>
+      <input type="number" matInput ngModel name="irPourcentage" required [(ngModel)]="cytogenetique.irPourcentage"
+        #irPInput="ngModel">
+    </mat-form-field>
+    <span class="label">%</span>
+
+  </div>
+
+</div><br>
+
+<span class="label">Moelle :</span>
+<mat-form-field appearance="fill">
+  <mat-label>Moelle </mat-label>
+  <mat-select [(ngModel)]="cytogenetique.moelle" ngModel name="moelle" required>
+    <mat-option *ngFor="let item of lymphoTab " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div id="conteneur1">
+
+  <span class="label">Date : </span>
+  <mat-form-field appearance="fill">
+    <mat-label> Date </mat-label>
+    <input matInput [matDatepicker]="dateMoelle" [(ngModel)]="cytogenetique.dateMoelle">
+    <mat-datepicker-toggle matSuffix [for]="dateMoelle"></mat-datepicker-toggle>
+    <mat-datepicker #dateMoelle></mat-datepicker>
+  </mat-form-field><br>
+
+  <span class="label">Resultat ( formule chromosomique ) </span>
+  <mat-form-field appearance="fill">
+    <mat-label>Resultat </mat-label>
+    <input type="text" matInput ngModel name="resultatMoelle" required [(ngModel)]="cytogenetique.resultatMoelle"
+      #resultatMoInput="ngModel">
+  </mat-form-field>
+
+</div>
+

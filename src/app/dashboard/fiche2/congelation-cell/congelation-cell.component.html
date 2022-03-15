@@ -1,0 +1,33 @@
+<span class="label"><strong>Congélation de cellules : </strong></span>
+<mat-form-field appearance="fill">
+  <mat-label>Congélation de cellules </mat-label>
+  <mat-select [(ngModel)]="fiche6.congelationCellule" ngModel name="cdc" required>
+    <mat-option *ngFor="let item of tabenum2 " value="{{item}}">{{item}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+<div *ngIf="fiche6.congelationCellule=='Faite'">
+  <div class="row">
+    <div class="column">
+      <span class="label">Laboratoire :</span>
+      <mat-form-field appearance="fill">
+        <mat-label>Laboratoire </mat-label>
+        <mat-select [(ngModel)]="fiche6.labo" ngModel name="resultat" required>
+          <mat-option *ngFor="let item of lab" value="{{item}}">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="column">
+      <span class="label">Type de prélévement :</span>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Type de prélévement" ngModel name="Type_de_prélévement" required
+          [(ngModel)]="fiche6.typePrelevement" #typepreHInput="ngModel">
+        <mat-error *ngIf="typepreHInput.hasError('required')">typepreHInput must not be empty.</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+</div>
+

@@ -1,0 +1,52 @@
+<div *ngFor="let obj of dataAndrogArray let i=index" class="flex-container">
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Mois</mat-label>
+    
+      <mat-select [(ngModel)]="obj.mois" ngModel name="mois" required>
+        <mat-option *ngFor="let item of mois " [value]="item">{{item}}</mat-option>
+      </mat-select>
+    
+    </mat-form-field>
+    
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Reponse</mat-label>
+    
+      <mat-select [(ngModel)]="obj.reponse" ngModel name="response" required>
+        <mat-option *ngFor="let item of response " value="{{item}}">{{item}}</mat-option>
+      </mat-select>
+    
+    </mat-form-field>
+    
+    <button mat-icon-button color="warn" (click)="removeForm(i)" *ngIf="i!=0"><mat-icon>remove_circle_outline</mat-icon></button>
+    
+    </div>
+    
+    <button mat-icon-button color="primary" (click)="addForm()"><mat-icon>add_box</mat-icon></button>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
